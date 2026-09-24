@@ -32,6 +32,7 @@ def game_start():
     print(f"Your reaction time was: {reaction_time} seconds")
     return reaction_time
 
+
 while True:
     result = game_beginning()
 
@@ -42,19 +43,20 @@ while True:
     else:
         print("Please type yes or no.")
 
-
 print("Great! You will complete 5 attempts.")
 
+best_time = None
 
-
-for attempt in range(5):
+for attempt in range(1,6):
     print(f"Attempt {attempt}:")
     time_taken = game_start()
-    attempt_times = attempt_times + [time_taken]  # no append
-    print(f"Your reaction time was: {time_taken} seconds")
 
-fastest = min(attempt_times)
+    if best_time is None or time_taken < best_time:
+        best_time = time_taken
+
 print("All attempts complete!")
-print(f"Your fastest reaction time was: {fastest} seconds, "
-      f"but if you pressed enter before {"Go"} .........................................................................................................................................................................................(You're a big fat cheater😒🫥)")
+print(
+    f"Your fastest reaction time was: {best_time} seconds, "
+    f"but if you pressed enter before 'GO' .........................................................................................................................................................................................(You're a big fat cheater😒🫥)"
+)
 
