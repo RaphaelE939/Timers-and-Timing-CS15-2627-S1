@@ -17,7 +17,7 @@ def game_beginning():
     else:
         print("Invalid input. Are you ready to play?")
         return "invalid"
-
+game_beginning()
 
 def game_start():
     print("Get ready...")
@@ -32,16 +32,6 @@ def game_start():
     print(f"Your reaction time was: {reaction_time} seconds")
     return reaction_time
 
-
-while True:
-    result = game_beginning()
-
-    if result == "yes":
-        break
-    elif result == "no":
-        exit()
-    else:
-        print("Please type yes or no.")
 
 print("Great! You will complete 5 attempts.")
 
